@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal.open .modal__window,
+.modal.open .modal__overlay {
+    z-index: 100;
+
+    opacity: 1;
+}
+
+.modal.open .modal__window {
+    transform: translateY(0);
+}
+
+.modal__window,
+.modal__overlay {
+    z-index: -1;
+
+    opacity: 0;
+}
+
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .5);
+
+    transition: opacity 0.2s ease-in;
+}
+
+.modal__window {
+    background: #fff;
+
+    border-radius: 5px;
+
+    transform: translateY(-50%);
+    transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.modal__title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.modal__body {
+    padding: 10px;
+}
+
+.modal__footer {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 10px;
+    padding: 10px;
+
+    border-top: 1px solid #eee;
+}
+
+.button {
+    position: relative;
+
+    padding: 10px 20px;
+
+    font-size: 16px;
+
+    color: #fff;
+
+    background-color: transparent;
+
+    border:  0;
+    border-radius: 5px;
+    outline: 0;
+
+    cursor: pointer;
+}
+
+.button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.button:focus {
+    box-shadow: 0 0 0 0.1em #6e86d0;
+}
+
+.button_bg-color_blue {
+    background-color: #0055ff;
+}
+
+.button_bg-color_red {
+    background-color: #ff0000;
+}
+
+.button_bg-color_red:focus {
+    box-shadow: 0 0 0 0.1em #fa6969;
+}
+
+.button_bg-color_green {
+    background-color: #008800;
+}
+
+.button_bg-color_green:focus {
+    box-shadow: 0 0 0 0.1em #77b377;
+}
+
+.button__close {
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+}
+
+.button__close:before, .button__close:after {
+    content: ' ';
+
+    position: absolute;
+    top: 0;
+
+    height: 24px;
+    width: 2px;
+
+    background-color: #333;
+}
+.button__close:before {
+    transform: rotate(45deg);
+}
+.button__close:after {
+    transform: rotate(-45deg);
+}

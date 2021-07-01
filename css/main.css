@@ -1,0 +1,60 @@
+.form__list {
+    margin: 20px;
+}
+
+.check {
+    display: block;
+
+    padding-left: 1.2em;
+}
+
+.check:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.check__input {
+    position: absolute;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.check__box {
+    position: absolute;
+
+    width: 1em;
+    height: 1em;
+
+    margin-left: -1.5em;
+
+    background-color: #fff;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 0.1em #4a90e2;
+}
+
+.check__input:checked + .check__box {
+    background-color: #4a90e2;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpolyline fill='none' stroke='%23fff' stroke-width='3' points='1.079 4.999 5 9 10.837 2'/%3E%3C/svg%3E");
+}
+
+/* Focused */
+
+.check__input:focus + .check__box {
+    box-shadow:
+            0 0 0 0.1em #4a90e2,
+            0 0 0 0.2em #7ed321;
+}
+
+/* Disabled */
+
+.check__input:disabled + .check__box {
+    box-shadow: 0 0 0 0.1em #9b9b9b;
+}
+
+.check__input:checked:disabled + .check__box {
+    background-color: #9b9b9b;
+}
